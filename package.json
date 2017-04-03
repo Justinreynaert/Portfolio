@@ -1,0 +1,10 @@
+{
+  "name": "MEAN",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "method-override": "^2.3.8",
+    "mongoose": "^4.9.3"
+  }
+}

@@ -1,0 +1,15 @@
+// _helpers.scss
+
+/* helper class */
+
+.cf {
+  @include clearfix;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}

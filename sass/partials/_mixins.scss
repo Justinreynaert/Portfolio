@@ -1,0 +1,89 @@
+// _mixins.scss
+// diverse mixins
+
+//clearfix
+@mixin clearfix {
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+
+    clear: both;
+  }
+}
+
+//box-sizing
+@mixin boxSizing($box) {
+  -webkit-box-sizing: $box;
+  -moz-box-sizing: $box;
+  box-sizing: $box;
+}
+
+//border-radius
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+
+}
+
+//combineer meerdere transforms
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+//
+@mixin boxShadow($shadows...){
+  //... variabel aantal argument
+
+  -webkit-box-shadow: $shadows;
+  -moz-box-shadow: $shadows;
+  -o-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// media query mixin
+// breakpoints
+// em gebaseerd 1em = 16px
+
+$SS: 30em; //480px
+$M: 40em; //640px
+$L: 50em; //800px
+$XL: 61.25em; //980px
+$XXL: 80em; //1280px
+
+@mixin MQ($canvas) {
+  //MF way
+  @if $canvas == SS {
+    @media only screen and (min-width: $SS) { @content; }
+  }
+
+  @else if $canvas == M {
+    @media only screen and (min-width: $M) { @content; }
+  }
+
+  @else if $canvas == L {
+    @media only screen and (min-width: $L) { @content; }
+  }
+
+  @else if $canvas == XL {
+    @media only screen and (min-width: $XL) { @content; }
+  }
+
+  @else if $canvas == XXL {
+    @media only screen and (min-width: $XXL) { @content; }
+  }
+}
