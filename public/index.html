@@ -7,7 +7,6 @@
     <title>Start MEAN SPA</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- JS -->
@@ -28,15 +27,29 @@
 
     <div class="container">
 
+        <header>
+            <img src="./images/logoFinWhite.svg" alt="logo">
+
+        </header>
+
         <!-- header-->
-        <nav class="navbar navbar-inverse">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">Justin: Winning</a>
-            </div>
+        <nav id="topnav">
 
             <!-- link to our pages. angular handles the routing here -->
-            <ul class="nav navbar-nav">
-                <li><a href="/nerds">Nerds</a></li>
+            <ul class="navitem">
+                <li><a href="/">home</a></li>
+            </ul>
+
+            <ul class="navitem">
+                <li><a href="/whoami">whoami</a></li>
+            </ul>
+
+            <ul class="navitem">
+                <li><a href="/projects">projects</a></li>
+            </ul>
+
+            <ul class="navitem">
+                <li><a href="/contact">contact</a></li>
             </ul>
         </nav>
 

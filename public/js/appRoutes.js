@@ -11,13 +11,23 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'MainController'
         })
 
-        .when('/nerds', {
-            templateUrl: 'views/nerd.html',
+        .when('/whoami', {
+            templateUrl: 'views/whoami.html',
+            controller: 'NerdController'
+        })
+
+        .when('/projects', {
+            templateUrl: 'views/projects.html',
+            controller: 'NerdController'
+        })
+
+        .when('/contact', {
+            templateUrl: 'views/contact.html',
             controller: 'NerdController'
         })
 
         .otherwise({
-            templateUrl: 'views/home.html',
+            templateUrl: 'views/notfound.html',
             controller: 'MainController'
     });
 
