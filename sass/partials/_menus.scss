@@ -3,3 +3,83 @@
 #topnav {
   display: none;
 }
+
+/* flex squares */
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  -webkit-flex-flow: wrap;
+  justify-content: space-around;
+  line-height:30px;
+}
+.flex-item {
+  width: 50%;
+
+  flex: 1 0 auto;
+  height:auto;
+  position: relative;
+  float: left;
+
+
+}
+
+.flex-item:last-child:not(:nth-child(even)){
+
+  width: 5%;
+  height: 5%;
+}
+
+.flipfront, .flipback {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.625em; /* 10px */
+}
+
+.flipfront, .flipback {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.flipfront {
+  background-color: orange;
+}
+
+.flipback {
+  background-color: red;
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.flex-item.EfClick.flipped .flipfront {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+.flex-item.EfClick.flipped .flipback {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}
+
+
+
+
+.flex-item:before {
+  content:'';
+  float:left;
+  padding-top:100%;
+}
+
+
+.flex-item a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}

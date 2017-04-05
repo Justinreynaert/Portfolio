@@ -1,6 +1,9 @@
-@import "partials/backgrounds";
 @import "partials/base";
+@import "partials/colors";
+@import "partials/structure.scss";
 @import "partials/mixins";
 @import "partials/helpers";
+@import "partials/header";
+@import "partials/main";
+@import "partials/typografie";
 @import "partials/menus";
-@import "partials/svg";

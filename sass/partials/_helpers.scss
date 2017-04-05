@@ -13,3 +13,20 @@
 .right {
   float: right;
 }
+
+.center {
+  text-align: center;
+}
+
+.col {
+  box-sizing: border-box;
+  width: 50%;
+  height: auto;
+  background-color: $grey;
+  padding: 0.625em;
+  color: white;
+
+}
+
+.vertical-text {
+}

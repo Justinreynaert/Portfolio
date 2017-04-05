@@ -7,6 +7,7 @@
  */
 /* Document
    ========================================================================== */
+@import url("https://fonts.googleapis.com/css?family=Nunito+Sans");
 /* line 13, ../../sass/partials/_normalize.scss */
 html {
   font-family: sans-serif;
@@ -490,6 +491,11 @@ template {
   display: none;
 }
 
+/* line 1, ../../sass/partials/_structure.scss */
+body {
+  background: #000;
+}
+
 /* helper class */
 /* line 6, ../../sass/partials/_mixins.scss */
 .cf:before, .cf:after {
@@ -511,13 +517,150 @@ template {
   float: right;
 }
 
+/* line 17, ../../sass/partials/_helpers.scss */
+.center {
+  text-align: center;
+}
+
+/* line 21, ../../sass/partials/_helpers.scss */
+.col {
+  box-sizing: border-box;
+  width: 50%;
+  height: auto;
+  background-color: #9d9d9d;
+  padding: 0.625em;
+  color: white;
+}
+
+/* line 1, ../../sass/partials/_header.scss */
+header {
+  width: 100%;
+}
+
+/* line 6, ../../sass/partials/_header.scss */
+header img {
+  display: block;
+  box-sizing: border-box;
+  width: 40%;
+  margin: 1.5em auto;
+  /* 24px */
+}
+
+/* line 5, ../../sass/partials/_main.scss */
+#whoami {
+  float: left;
+  padding: 0.625em;
+  /* 10 px */
+  height: auto;
+  background-color: #000;
+}
+
+/* import font */
+/* line 5, ../../sass/partials/_typografie.scss */
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  text-transform: uppercase;
+}
+
+/* line 10, ../../sass/partials/_typografie.scss */
+p {
+  margin: 0;
+}
+
+/* line 13, ../../sass/partials/_typografie.scss */
+h1 {
+  font-size: 3em;
+  text-align: center;
+  color: white;
+}
+
 /* topmenu */
 /* line 3, ../../sass/partials/_menus.scss */
 #topnav {
   display: none;
 }
 
-/* line 1, ../../sass/partials/svg.scss */
-body {
-  background-color: #000;
+/* flex squares */
+/* line 8, ../../sass/partials/_menus.scss */
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  -webkit-flex-flow: wrap;
+  justify-content: space-around;
+  line-height: 30px;
+}
+
+/* line 17, ../../sass/partials/_menus.scss */
+.flex-item {
+  width: 50%;
+  flex: 1 0 auto;
+  height: auto;
+  position: relative;
+  float: left;
+}
+
+/* line 28, ../../sass/partials/_menus.scss */
+.flex-item:last-child:not(:nth-child(even)) {
+  width: 5%;
+  height: 5%;
+}
+
+/* line 34, ../../sass/partials/_menus.scss */
+.flipfront, .flipback {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0.625em;
+  /* 10px */
+}
+
+/* line 44, ../../sass/partials/_menus.scss */
+.flipfront, .flipback {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+/* line 51, ../../sass/partials/_menus.scss */
+.flipfront {
+  background-color: orange;
+}
+
+/* line 55, ../../sass/partials/_menus.scss */
+.flipback {
+  background-color: red;
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+/* line 61, ../../sass/partials/_menus.scss */
+.flex-item.EfClick.flipped .flipfront {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+
+/* line 66, ../../sass/partials/_menus.scss */
+.flex-item.EfClick.flipped .flipback {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}
+
+/* line 74, ../../sass/partials/_menus.scss */
+.flex-item:before {
+  content: '';
+  float: left;
+  padding-top: 100%;
+}
+
+/* line 81, ../../sass/partials/_menus.scss */
+.flex-item a {
+  display: block;
+  height: 100%;
+  width: 100%;
 }

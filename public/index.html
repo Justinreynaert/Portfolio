@@ -1,16 +1,18 @@
 <!-- public/views/index.html -->
 
 <!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>Start MEAN SPA</title>
 
     <!-- CSS -->
+    <link rel="stylesheet" href="libs/fullpage.js/pure%20javascript%20(Alpha)/javascript.fullPage.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- JS -->
-
+    <script src="libs/fullpage.js/pure%20javascript%20(Alpha)/javascript.fullPage.min.js"></script>
     <script src="libs/angular/angular.min.js"></script>
     <script src="libs/angular-route/angular-route.min.js"></script>
 
@@ -25,38 +27,105 @@
 
 <body data-ng-app="sampleApp" data-ng-controller="NerdController">
 
-    <div class="container">
+
 
         <header>
-            <img src="./images/logoFinWhite.svg" alt="logo">
 
+                <img src="./images/logoFinWhite.svg" alt="logo">
+
+            <!-- NAV -->
+            <nav id="topnav">
+
+                <!-- link to our pages. angular handles the routing here -->
+                <ul class="navitem">
+                    <li><a href="/">home</a></li>
+                </ul>
+
+                <ul class="navitem">
+                    <li><a href="/whoami">whoami</a></li>
+                </ul>
+
+                <ul class="navitem">
+                    <li><a href="/projects">projects</a></li>
+                </ul>
+
+                <ul class="navitem">
+                    <li><a href="/contact">contact</a></li>
+                </ul>
+            </nav>
+            <!-- end nav -->
         </header>
 
+        <main>
+            <div id="whoami" class="clearfix">
+                <div class="col left clearfix">
+                    <p class="vertical-text">Hi</p>
+                </div>
+
+                <div class="col right">
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl ligula, sagittis sed nisl rhoncus, dignissim fermentum nisi. </p>
+                </div>
+
+            </div>
+
+            <div id="projects">
+                <h1>My Creations</h1>
+
+                <ul class="flex-container">
+                    <li class="flex-item EfClick">
+                        <div class="flipfront">azer</div>
+                        <div class="flipback">qsdfqsdffss</div>
+                    </li>
+                    <li class="flex-item EfClick">
+                        <div class="flipfront">azer</div>
+                        <div class="flipback">qsdfqsdffss</div>
+                    </li>
+                    <li class="flex-item EfClick">
+                        <div class="flipfront">azer</div>
+                        <div class="flipback">qsdfqsdffss</div>
+                    </li>
+                    <li class="flex-item EfClick">
+                        <div class="flipfront">azer</div>
+                        <div class="flipback">qsdfqsdffss</div>
+                    </li>
+                    <li class="flex-item EfClick">
+                        <div class="flipfront">azer</div>
+                        <div class="flipback">qsdfqsdffss</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="Contact">
+                <h1>Contact</h1>
+            </div>
+
+        </main>
         <!-- header-->
-        <nav id="topnav">
 
-            <!-- link to our pages. angular handles the routing here -->
-            <ul class="navitem">
-                <li><a href="/">home</a></li>
-            </ul>
-
-            <ul class="navitem">
-                <li><a href="/whoami">whoami</a></li>
-            </ul>
-
-            <ul class="navitem">
-                <li><a href="/projects">projects</a></li>
-            </ul>
-
-            <ul class="navitem">
-                <li><a href="/contact">contact</a></li>
-            </ul>
-        </nav>
 
         <!-- angular dynamic content -->
         <div data-ng-view></div>
 
-    </div>
+<script>
+    /* code for flipping squares */
+    (function() {
+        var cards = document.querySelectorAll(".flex-item.EfClick");
+        console.log(cards);
+        for (var i = 0; i < cards.length; i++) {
+            var card = cards[i];
+            clickListener(card)
+        }
+
+        function clickListener(card) {
+            card.addEventListener("click", function() {
+                var c = this.classList;
+                c.contains("flipped") === true ? c.remove("flipped") : c.add('flipped');
+            });
+        }
+    })();
+</script>
+
 
 </body>
 </html>
