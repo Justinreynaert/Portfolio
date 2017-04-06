@@ -5,21 +5,48 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
-
+var mongoose = require('mongoose');
 //configuration
 
-var db = require('./config/db');
+
 
 // port
 
 var port = process.env.PORT || 8080;
 
-// connect to our mongoDB database
-// (uncomment after you enter in your own credentials in config/db.js)
-// mongoose.connect(db.url);
+// DB stuffs -- Connecting to the db
+mongoose.connect('mongodb://localhost/meanstackdb');
 
-// get all data/stuff of the body (POST) parameters
-// parse application/json
+//Projects Schema
+var Project = new mongoose.Schema({
+    name: String,
+    work: String,
+    year: String
+});
+
+//Projects Model
+var projectModel = mongoose.model('Project', Project); // collection films pluralization
+
+//ROUTES =====
+// CRUD -> Rest
+
+//GET /api:test
+    app.get('/api', function(req,res) {
+        res.send('DB actief')
+    });
+
+//GET /api/projects: shows all projects
+    app.get('/api/projects', function(req,res) {
+        return projectModel.find(function(err, projects) {
+            if (!err) {
+                res.send(projects);// all projects
+            }
+            else {
+                console.log(err)
+            }
+        })
+    });
+// EIND DB STUFF
 
 app.use(bodyParser.json());
 
@@ -37,7 +64,7 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(express.static(__dirname + '/public'));
 
 //routes
-require('./app/routes')(app); //configure our rotues
+require('./app/routes')(app); //configure our routes
 
 //start app
 //startup our app at 8080

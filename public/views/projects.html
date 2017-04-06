@@ -1,9 +1,15 @@
 <!-- public/views/whoami.html -->
 
-<div class="jumbotron text-center">
 
-    <h1>who am i?</h1>
 
-    <p>{{ tagline }}</p>
+    <div id="projects">
+        <h1>{{ titel }}</h1>
 
-</div>
+        <ul class="flex-container">
+            <li class="flex-item EfClick" ng-repeat="project in projects">
+                <div class="flipfront">{{project.name}}</div>
+                <div class="flipback">qsdf</div>
+            </li>
+        </ul>
+    </div>
+

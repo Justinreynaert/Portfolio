@@ -6,25 +6,18 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
     //home.page
 
+
+
         .when('/', {
             templateUrl: 'views/home.html',
             controller: 'MainController'
         })
 
-        .when('/whoami', {
-            templateUrl: 'views/whoami.html',
-            controller: 'NerdController'
-        })
-
         .when('/projects', {
             templateUrl: 'views/projects.html',
-            controller: 'NerdController'
+            controller: 'ProjectController'
         })
 
-        .when('/contact', {
-            templateUrl: 'views/contact.html',
-            controller: 'NerdController'
-        })
 
         .otherwise({
             templateUrl: 'views/notfound.html',
