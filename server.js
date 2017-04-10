@@ -46,6 +46,18 @@ var projectModel = mongoose.model('Project', Project); // collection films plura
             }
         })
     });
+
+//GET /api/projects/detail: shows one projects
+    app.get('/api/projects/:id', function(req, res) {
+        return projectModel.findById(req.params.id, function(err, project) {
+            if (!err) {
+                res.send(project); // één film
+            }
+            else {
+                return console.log(err);
+            }
+        })
+    });
 // EIND DB STUFF
 
 app.use(bodyParser.json());

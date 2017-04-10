@@ -27,8 +27,12 @@
 
 .flex-item:last-child:not(:nth-child(even)){
 
-  width: 5%;
-  height: 5%;
+  width: 50%;
+
+  flex: 1 0 auto;
+  height:auto;
+  position: relative;
+  float: left;
 }
 
 .flipfront, .flipback {
@@ -49,7 +53,10 @@
 }
 
 .flipfront {
-  background-color: orange;
+  /*background-color: orange;*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
 .flipback {
@@ -79,7 +86,6 @@
 
 
 .flex-item a {
-  display: block;
-  height: 100%;
-  width: 100%;
+
 }
+

@@ -1,12 +1,9 @@
 // public/js/controllers/ProjectCtrl.js
 
 angular.module('ProjectCtrl', [])
-    .controller('ProjectController', function($scope, $http) {
+    .controller('ProjectController',['$scope','projectService', function($scope, projectService) {
         $scope.titel = "My Creations";
-        $http.get('http://localhost:8080/api/projects')
-            .then(function(data) {
-                console.log(data);
-                $scope.projects = data;
+        $scope.projects = projectService.query();
 
-        })
-    });
+        }]);
+

@@ -603,11 +603,14 @@ h1 {
 
 /* line 28, ../../sass/partials/_menus.scss */
 .flex-item:last-child:not(:nth-child(even)) {
-  width: 5%;
-  height: 5%;
+  width: 50%;
+  flex: 1 0 auto;
+  height: auto;
+  position: relative;
+  float: left;
 }
 
-/* line 34, ../../sass/partials/_menus.scss */
+/* line 38, ../../sass/partials/_menus.scss */
 .flipfront, .flipback {
   box-sizing: border-box;
   position: absolute;
@@ -619,7 +622,7 @@ h1 {
   /* 10px */
 }
 
-/* line 44, ../../sass/partials/_menus.scss */
+/* line 48, ../../sass/partials/_menus.scss */
 .flipfront, .flipback {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -627,40 +630,36 @@ h1 {
   transition: transform 0.3s;
 }
 
-/* line 51, ../../sass/partials/_menus.scss */
+/* line 55, ../../sass/partials/_menus.scss */
 .flipfront {
-  background-color: orange;
+  /*background-color: orange;*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
-/* line 55, ../../sass/partials/_menus.scss */
+/* line 62, ../../sass/partials/_menus.scss */
 .flipback {
   background-color: red;
   -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
 }
 
-/* line 61, ../../sass/partials/_menus.scss */
+/* line 68, ../../sass/partials/_menus.scss */
 .flex-item.EfClick.flipped .flipfront {
   -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
 }
 
-/* line 66, ../../sass/partials/_menus.scss */
+/* line 73, ../../sass/partials/_menus.scss */
 .flex-item.EfClick.flipped .flipback {
   -webkit-transform: rotateY(0);
   transform: rotateY(0);
 }
 
-/* line 74, ../../sass/partials/_menus.scss */
+/* line 81, ../../sass/partials/_menus.scss */
 .flex-item:before {
   content: '';
   float: left;
   padding-top: 100%;
-}
-
-/* line 81, ../../sass/partials/_menus.scss */
-.flex-item a {
-  display: block;
-  height: 100%;
-  width: 100%;
 }

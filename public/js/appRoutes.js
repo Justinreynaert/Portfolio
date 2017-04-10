@@ -18,14 +18,25 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'ProjectController'
         })
 
+        .when('/projects/:_id', {
+            templateUrl: 'views/projectDetail.html',
+            controller: 'ProjectDetailController'
+        })
+
+        .when('/contact', {
+            templateUrl: 'views/whoami.html',
+            controller: 'WhoamiController'
+        })
+
 
         .otherwise({
             templateUrl: 'views/notfound.html',
             controller: 'MainController'
     });
-
+    $locationProvider.hashPrefix('');
     $locationProvider.html5Mode({
         enabled: true,
+        rewriteLinks: false,
         requireBase: false
     });
 
