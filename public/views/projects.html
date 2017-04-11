@@ -12,7 +12,8 @@
                 <div class="flipback">
                     <p class="work">{{project.work}}</p>
                     <p class="work">{{project.year}}</p>
-                    <a href="/projects/{{project._id}}" ng-click="$event.stopPropagation();">View Project!</a>
+                    <p class="work">{{project._id}}</p>
+                    <a href="/{{project._id}}" ng-click="$event.stopPropagation();">View Project!</a>
                     <!--
                     <img src="../images/{{project.img}}.jpg">
                     -->

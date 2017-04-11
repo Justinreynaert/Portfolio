@@ -1,7 +1,7 @@
 // public/js/controllers/ProjectCtrl.js
 
-angular.module('ProjectCtrl', [])
-    .controller('ProjectController', function($scope, $http) {
-        $scope.titel = "Contact";
+angular.module('WhoamiCtrl', [])
+    .controller('WhoamiController', function($scope) {
+        $scope.titel = "Whoami";
 
     });

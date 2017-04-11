@@ -9,29 +9,28 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
 
 
         .when('/', {
-            templateUrl: 'views/home.html',
+            templateUrl: '/views/home.html',
             controller: 'MainController'
         })
 
         .when('/projects', {
-            templateUrl: 'views/projects.html',
+            templateUrl: '/views/projects.html',
             controller: 'ProjectController'
         })
 
-        .when('/projects/:_id', {
-            templateUrl: 'views/projectDetail.html',
+        /*.when('/projects/:_id', {
+            templateUrl: '/views/projectDetail.html',
             controller: 'ProjectDetailController'
-        })
+        })*/
 
         .when('/contact', {
-            templateUrl: 'views/whoami.html',
+            templateUrl: '/views/whoami.html',
             controller: 'WhoamiController'
         })
 
 
         .otherwise({
-            templateUrl: 'views/notfound.html',
-            controller: 'MainController'
+            redirectTo: '/'
     });
     $locationProvider.hashPrefix('');
     $locationProvider.html5Mode({

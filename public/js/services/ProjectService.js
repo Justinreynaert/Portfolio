@@ -2,17 +2,15 @@
 
 /* Services */
 
-angular.module('ProjectService', ['ngResource'])
-    .factory('projectService', ['$resource', function($resource){
+angular.module('ProjectService', [])
+    .factory('projectService', ['$resource', function($resource) {
 
-        var urlBase = 'api/projects';
-        var Project = $resource(
-            urlBase + '/:_id',
-            {_id: '@_id'},
+
+        return $resource(
+            '/api/projects/:_id',
+            {_id:'@_id'},
             {
-                update:{method: 'PUT'}
+                get:{method: 'GET', isArray: true}
             }
         );
-
-        return Project;
-}]);
+    }]);

@@ -31,33 +31,33 @@ var projectModel = mongoose.model('Project', Project); // collection films plura
 // CRUD -> Rest
 
 //GET /api:test
-    app.get('/api', function(req,res) {
-        res.send('DB actief')
-    });
+app.get('/api', function(req,res) {
+    res.send('DB actief')
+});
 
 //GET /api/projects: shows all projects
-    app.get('/api/projects', function(req,res) {
-        return projectModel.find(function(err, projects) {
-            if (!err) {
-                res.send(projects);// all projects
-            }
-            else {
-                console.log(err)
-            }
-        })
-    });
+app.get('/api/projects', function(req,res) {
+    return projectModel.find(function(err, projects) {
+        if (!err) {
+            res.send(projects);// all projects
+        }
+        else {
+            console.log(err)
+        }
+    })
+});
 
 //GET /api/projects/detail: shows one projects
-    app.get('/api/projects/:id', function(req, res) {
-        return projectModel.findById(req.params.id, function(err, project) {
-            if (!err) {
-                res.send(project); // één film
-            }
-            else {
-                return console.log(err);
-            }
-        })
-    });
+app.get('/api/projects/:_id', function(req, res) {
+    return projectModel.findById(req.params.id, function(err, project) {
+        if (!err) {
+            res.send(project); // één film
+        }
+        else {
+            return console.log(err);
+        }
+    })
+});
 // EIND DB STUFF
 
 app.use(bodyParser.json());
@@ -67,7 +67,7 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 //parse application/x-www-form-urlencoded
 
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({extended:true}));
 
 //override with the X-HTTP-MEthod-Override header in the request. simulate DELETE/PUT
 app.use(methodOverride('X-HTTP-Method-Override'));

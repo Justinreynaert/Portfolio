@@ -575,11 +575,6 @@ h1 {
 }
 
 /* topmenu */
-/* line 3, ../../sass/partials/_menus.scss */
-#topnav {
-  display: none;
-}
-
 /* flex squares */
 /* line 8, ../../sass/partials/_menus.scss */
 .flex-container {

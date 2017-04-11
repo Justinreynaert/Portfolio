@@ -1,20 +1,4 @@
-<div id="projects">
-    <h1>{{ titel }}</h1>
-
-    <ul class="flex-container">
-        <li class="flex-item EfClick" ng-repeat="project in projects" ng-class="{'flipped':isflipped}" ng-click="isflipped = !isflipped"
-        >
-            <div class="flipfront" ng-style="{'background-image':'url(../images/{{project.img}}.jpg)'}" >{{project.name}}</div>
-            <div class="flipback">
-                <p class="work">{{project.work}}</p>
-                <p class="work">{{project.year}}</p>
-                <a href="/projects/{{project._id}}" ng-click="$event.stopPropagation();">View Project!</a>
-                <!--
-                <img src="../images/{{project.img}}.jpg">
-                -->
-
-
-            </div>
-        </li>
-    </ul>
+<div id="project">
+    <p>{{project.name}}</p>
+    <p>{{project.year}}</p>
 </div>
