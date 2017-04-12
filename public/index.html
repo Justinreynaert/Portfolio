@@ -8,23 +8,23 @@
     <title>Start MEAN SPA</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- JS -->
-    <script src="libs/angular/angular.js"></script>
-    <script src="libs/angular-route/angular-route.js"></script>
-    <script src="libs/angular-resource/angular-resource.min.js"></script>
+    <script src="/libs/angular/angular.js"></script>
+    <script src="/libs/angular-route/angular-route.js"></script>
+    <script src="/libs/angular-resource/angular-resource.min.js"></script>
     <!-- angular custom -->
 
-    <script src="js/services/ProjectService.js"></script>
-    <script src="js/controllers/MainCtrl.js"></script>
-    <script src="js/controllers/ProjectCtrl.js"></script>
-    <script src="js/controllers/ProjectDtCtrl.js"></script>
-    <script src="js/controllers/WhoamiCtrl.js"></script>
+    <script src="/js/services/ProjectService.js"></script>
+    <script src="/js/controllers/MainCtrl.js"></script>
+    <script src="/js/controllers/ProjectCtrl.js"></script>
+    <script src="/js/controllers/ProjectDtCtrl.js"></script>
+    <script src="/js/controllers/WhoamiCtrl.js"></script>
 
 
-    <script src="js/appRoutes.js"></script>
-    <script src="js/app.js"></script>
+    <script src="/js/appRoutes.js"></script>
+    <script src="/js/app.js"></script>
 
 
 </head>
@@ -35,7 +35,7 @@
 
         <header>
 
-                <img src="./images/logoFinWhite.svg" alt="logo">
+                <img src="/images/logoFinWhite.svg" alt="logo">
 
             <!-- NAV -->
             <nav id="topnav">
@@ -48,7 +48,7 @@
 
                     <li><a href="/contact">contact</a></li>
 
-                    <li><a href="/58e6013c4ec6fe851627e3d5">Project</a></li>
+                    <li><a href="/projects/58e6013c4ec6fe851627e3d5">Project</a></li>
                 </ul>
             </nav>
             <!-- end nav -->
@@ -67,16 +67,13 @@
 
             </div>
 
-            <div id="Contact">
-                <h1>Contact</h1>
-            </div>
-
+            <div data-ng-view></div>
         </main>
         <!-- header-->
 
 
         <!-- angular dynamic content -->
-        <div data-ng-view></div>
+
 
 
 

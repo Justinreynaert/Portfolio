@@ -2,6 +2,7 @@
 
 // modules
 var express = require('express');
+var path = require('path');
 var app = express();
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
@@ -21,7 +22,8 @@ mongoose.connect('mongodb://localhost/meanstackdb');
 var Project = new mongoose.Schema({
     name: String,
     work: String,
-    year: String
+    year: String,
+    img: String
 });
 
 //Projects Model
@@ -49,7 +51,7 @@ app.get('/api/projects', function(req,res) {
 
 //GET /api/projects/detail: shows one projects
 app.get('/api/projects/:_id', function(req, res) {
-    return projectModel.findById(req.params.id, function(err, project) {
+    return projectModel.findById(req.params._id, function(err, project) {
         if (!err) {
             res.send(project); // één film
         }
@@ -58,7 +60,12 @@ app.get('/api/projects/:_id', function(req, res) {
         }
     })
 });
+
+
+
 // EIND DB STUFF
+//routes
+
 
 app.use(bodyParser.json());
 
@@ -75,7 +82,6 @@ app.use(methodOverride('X-HTTP-Method-Override'));
 //set the static files location /public/img will be /img for users
 app.use(express.static(__dirname + '/public'));
 
-//routes
 require('./app/routes')(app); //configure our routes
 
 //start app

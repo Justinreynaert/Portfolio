@@ -14,6 +14,7 @@ module.exports = function(app) {
     //route to handle all angular requests
 
     app.get('*', function(req,res) {
+        console.log(__dirname);
         res.sendFile(path.join(__dirname, '../public', 'index.html')); // load our public/index.html file
     })
 

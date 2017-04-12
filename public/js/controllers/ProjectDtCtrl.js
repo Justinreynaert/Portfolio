@@ -1,7 +1,7 @@
 angular.module('ProjectDtCtrl', [])
-    .controller('ProjectController',
+    .controller('ProjectDetailController',
         ['$scope','$routeParams','projectService', function($scope, $routeParams, projectService) {
-        $scope.titel = "Project: " + $routeParams.name;
-        $scope.project = projectService.get({},{'_id':$routeParams._id})
+
+            $scope.project = projectService.get({},{'_id':$routeParams._id});
 
     }]);

@@ -18,22 +18,27 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'ProjectController'
         })
 
-        /*.when('/projects/:_id', {
+        .when('/projects/:_id', {
             templateUrl: '/views/projectDetail.html',
             controller: 'ProjectDetailController'
-        })*/
+        })
 
         .when('/contact', {
             templateUrl: '/views/whoami.html',
             controller: 'WhoamiController'
         })
 
-
         .otherwise({
+            redirectTo: '/'}
+    );
+
+
+        /*.otherwise({
             redirectTo: '/'
-    });
-    $locationProvider.hashPrefix('');
-    $locationProvider.html5Mode({
+        });*/
+    $locationProvider
+        .hashPrefix('')
+        .html5Mode({
         enabled: true,
         rewriteLinks: false,
         requireBase: false
