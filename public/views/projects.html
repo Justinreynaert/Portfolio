@@ -2,7 +2,7 @@
 
 
 
-    <div id="projects">
+    <section id="projects">
         <h1>{{ titel }}</h1>
 
         <ul class="flex-container">
@@ -12,8 +12,9 @@
                 <div class="flipback">
                     <p class="work">{{project.work}}</p>
                     <p class="work">{{project.year}}</p>
-                    <p class="work">{{project._id}}</p>
                     <a ng-href="projects/{{project._id}}" ng-click="$event.stopPropagation();">View Project!</a>
+                    <a ng-href="project/edit/{{project._id}}" ng-click="$event.stopPropagation();">Edit Project!</a>
+
                     <!--
                     <img src="../images/{{project.img}}.jpg">
                     -->
@@ -22,7 +23,7 @@
                 </div>
             </li>
         </ul>
-    </div>
+    </section>
 
 
 

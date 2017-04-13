@@ -1,10 +1,59 @@
 /* topmenu */
 
 #topnav {
+  position: fixed;
+  background-color: $grey;
+  top: 0.625em;
+  right: 0.625em;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  z-index: 1;
 
+  nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    text-align: right;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type:none;
+
+      li {
+        background-color: $grey;
+        padding: 0.625em 0;
+
+        &:hover {
+          background-color: $rood;
+        }
+
+
+        a {
+          display: block;
+          width: auto;
+          height: auto;
+          text-decoration: none;
+          color: $rood;
+        }
+      }
+    }
+  }
+
+  &:hover nav {
+
+  }
 }
 
-/* flex squares */
+#topnav nav.display {
+  display: block;
+}
+
+
+
+/*squares menu*/
 .flex-container {
   padding: 0;
   margin: 0;
@@ -13,79 +62,78 @@
   -webkit-flex-flow: wrap;
   justify-content: space-around;
   line-height:30px;
+
+  .flex-item {
+    width: 50%;
+
+    flex: 1 0 auto;
+    height:50vw;
+    position: relative;
+    float: left;
+
+
+  }
+
+  .flex-item:last-child:not(:nth-child(even)){
+    height: 50vw;
+
+  }
+
+  .flipfront, .flipback {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0.625em; /* 10px */
+  }
+
+  .flipfront, .flipback {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform 0.3s;
+  }
+
+  .flipfront {
+    /*background-color: orange;*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .flipback {
+    background-color: red;
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+
+  .flex-item.EfClick.flipped .flipfront {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+
+  .flex-item.EfClick.flipped .flipback {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+
+
+
+
+  .flex-item:before {
+    content:'';
+    float:left;
+    padding-top:100%;
+  }
+
+
+  .flex-item a {
+
+  }
 }
-.flex-item {
-  width: 50%;
-
-  flex: 1 0 auto;
-  height:auto;
-  position: relative;
-  float: left;
-
-
-}
-
-.flex-item:last-child:not(:nth-child(even)){
-
-  width: 50%;
-
-  flex: 1 0 auto;
-  height:auto;
-  position: relative;
-  float: left;
-}
-
-.flipfront, .flipback {
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  padding: 0.625em; /* 10px */
-}
-
-.flipfront, .flipback {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-transition: -webkit-transform 0.3s;
-  transition: transform 0.3s;
-}
-
-.flipfront {
-  /*background-color: orange;*/
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100% 100%;
-}
-
-.flipback {
-  background-color: red;
-  -webkit-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-}
-
-.flex-item.EfClick.flipped .flipfront {
-  -webkit-transform: rotateY(-180deg);
-  transform: rotateY(-180deg);
-}
-
-.flex-item.EfClick.flipped .flipback {
-  -webkit-transform: rotateY(0);
-  transform: rotateY(0);
-}
 
 
 
-
-.flex-item:before {
-  content:'';
-  float:left;
-  padding-top:100%;
-}
-
-
-.flex-item a {
-
-}
 

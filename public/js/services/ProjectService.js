@@ -10,6 +10,6 @@ angular.module('portfolio.services', [])
         return $resource(
             '/api/projects/:_id',
             {_id: '@_id'},
-            {get: {method: 'GET'}
+            {update: {method: 'PUT'}
         });
     }]);

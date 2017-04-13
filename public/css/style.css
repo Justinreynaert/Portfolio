@@ -496,6 +496,26 @@ body {
   background: #000;
 }
 
+/* line 5, ../../sass/partials/_structure.scss */
+section {
+  height: auto;
+  padding: 0.625em;
+}
+
+/* line 10, ../../sass/partials/_structure.scss */
+#projects {
+  padding: 0;
+}
+
+/* line 16, ../../sass/partials/_structure.scss */
+#project img {
+  width: 100%;
+}
+/* line 20, ../../sass/partials/_structure.scss */
+#project p {
+  color: white;
+}
+
 /* helper class */
 /* line 6, ../../sass/partials/_mixins.scss */
 .cf:before, .cf:after {
@@ -546,28 +566,23 @@ header img {
   /* 24px */
 }
 
-/* line 5, ../../sass/partials/_main.scss */
-#whoami {
-  float: left;
-  padding: 0.625em;
-  /* 10 px */
-  height: auto;
-  background-color: #000;
-}
-
 /* import font */
 /* line 5, ../../sass/partials/_typografie.scss */
 body {
   font-family: 'Nunito Sans', sans-serif;
-  text-transform: uppercase;
 }
 
 /* line 10, ../../sass/partials/_typografie.scss */
+#topnav {
+  text-transform: uppercase;
+}
+
+/* line 14, ../../sass/partials/_typografie.scss */
 p {
   margin: 0;
 }
 
-/* line 13, ../../sass/partials/_typografie.scss */
+/* line 17, ../../sass/partials/_typografie.scss */
 h1 {
   font-size: 3em;
   text-align: center;
@@ -575,8 +590,56 @@ h1 {
 }
 
 /* topmenu */
-/* flex squares */
-/* line 8, ../../sass/partials/_menus.scss */
+/* line 3, ../../sass/partials/_menus.scss */
+#topnav {
+  position: fixed;
+  background-color: #9d9d9d;
+  top: 0.625em;
+  right: 0.625em;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  z-index: 1;
+}
+/* line 13, ../../sass/partials/_menus.scss */
+#topnav nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+  text-align: right;
+}
+/* line 20, ../../sass/partials/_menus.scss */
+#topnav nav ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+/* line 25, ../../sass/partials/_menus.scss */
+#topnav nav ul li {
+  background-color: #9d9d9d;
+  padding: 0.625em 0;
+}
+/* line 29, ../../sass/partials/_menus.scss */
+#topnav nav ul li:hover {
+  background-color: red;
+}
+/* line 34, ../../sass/partials/_menus.scss */
+#topnav nav ul li a {
+  display: block;
+  width: auto;
+  height: auto;
+  text-decoration: none;
+  color: red;
+}
+
+/* line 50, ../../sass/partials/_menus.scss */
+#topnav nav.display {
+  display: block;
+}
+
+/*squares menu*/
+/* line 57, ../../sass/partials/_menus.scss */
 .flex-container {
   padding: 0;
   margin: 0;
@@ -586,27 +649,20 @@ h1 {
   justify-content: space-around;
   line-height: 30px;
 }
-
-/* line 17, ../../sass/partials/_menus.scss */
-.flex-item {
+/* line 66, ../../sass/partials/_menus.scss */
+.flex-container .flex-item {
   width: 50%;
   flex: 1 0 auto;
-  height: auto;
+  height: 50vw;
   position: relative;
   float: left;
 }
-
-/* line 28, ../../sass/partials/_menus.scss */
-.flex-item:last-child:not(:nth-child(even)) {
-  width: 50%;
-  flex: 1 0 auto;
-  height: auto;
-  position: relative;
-  float: left;
+/* line 77, ../../sass/partials/_menus.scss */
+.flex-container .flex-item:last-child:not(:nth-child(even)) {
+  height: 50vw;
 }
-
-/* line 38, ../../sass/partials/_menus.scss */
-.flipfront, .flipback {
+/* line 82, ../../sass/partials/_menus.scss */
+.flex-container .flipfront, .flex-container .flipback {
   box-sizing: border-box;
   position: absolute;
   top: 0;
@@ -616,45 +672,94 @@ h1 {
   padding: 0.625em;
   /* 10px */
 }
-
-/* line 48, ../../sass/partials/_menus.scss */
-.flipfront, .flipback {
+/* line 92, ../../sass/partials/_menus.scss */
+.flex-container .flipfront, .flex-container .flipback {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
 }
-
-/* line 55, ../../sass/partials/_menus.scss */
-.flipfront {
+/* line 99, ../../sass/partials/_menus.scss */
+.flex-container .flipfront {
   /*background-color: orange;*/
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 100%;
+  background-size: cover;
 }
-
-/* line 62, ../../sass/partials/_menus.scss */
-.flipback {
+/* line 106, ../../sass/partials/_menus.scss */
+.flex-container .flipback {
   background-color: red;
   -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
 }
-
-/* line 68, ../../sass/partials/_menus.scss */
-.flex-item.EfClick.flipped .flipfront {
+/* line 112, ../../sass/partials/_menus.scss */
+.flex-container .flex-item.EfClick.flipped .flipfront {
   -webkit-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
 }
-
-/* line 73, ../../sass/partials/_menus.scss */
-.flex-item.EfClick.flipped .flipback {
+/* line 117, ../../sass/partials/_menus.scss */
+.flex-container .flex-item.EfClick.flipped .flipback {
   -webkit-transform: rotateY(0);
   transform: rotateY(0);
 }
-
-/* line 81, ../../sass/partials/_menus.scss */
-.flex-item:before {
+/* line 125, ../../sass/partials/_menus.scss */
+.flex-container .flex-item:before {
   content: '';
   float: left;
   padding-top: 100%;
+}
+
+/* line 1, ../../sass/partials/_forms.scss */
+form {
+  padding: 0.625em;
+  background-color: white;
+}
+/* line 7, ../../sass/partials/_forms.scss */
+form input[type=text],
+form input[type=email],
+form textarea, form label, form button {
+  font-size: 1em;
+  color: #9d9d9d;
+  width: 100%;
+}
+/* line 15, ../../sass/partials/_forms.scss */
+form label {
+  display: block;
+  margin: 0.625em 0;
+  color: #000;
+}
+/* line 23, ../../sass/partials/_forms.scss */
+form input[type=text],
+form input[type=email],
+form textarea {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed #9d9d9d;
+  outline: none;
+  padding: 0;
+  font-style: italic;
+}
+/* line 33, ../../sass/partials/_forms.scss */
+form input[type=text]:focus,
+form input[type=email]:focus,
+form textarea:focus {
+  border-bottom: 1px dashed red;
+}
+/* line 38, ../../sass/partials/_forms.scss */
+form textarea {
+  overflow: hidden;
+  resize: vertical;
+}
+/* line 44, ../../sass/partials/_forms.scss */
+form button {
+  margin-top: 0.625em;
+  background: #9d9d9d;
+  border: none;
+  padding: 0.625em;
+  color: red;
+}
+/* line 51, ../../sass/partials/_forms.scss */
+form button:hover {
+  color: #9d9d9d;
+  background: red;
 }

@@ -23,9 +23,14 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'ProjectDetailController'
         })
 
+        .when('/project/edit/:_id', {
+            templateUrl: '/views/projectEditDetail.html',
+            controller: 'ProjectEditController'
+        })
+
         .when('/contact', {
-            templateUrl: '/views/whoami.html',
-            controller: 'WhoamiController'
+            templateUrl: '/views/contact.html',
+            controller: 'ContactController'
         })
 
         .otherwise({

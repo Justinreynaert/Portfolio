@@ -49,6 +49,7 @@ app.get('/api/projects', function(req,res) {
     })
 });
 
+
 //GET /api/projects/detail: shows one projects
 app.get('/api/projects/:_id', function(req, res) {
     return projectModel.findById(req.params._id, function(err, project) {
@@ -61,6 +62,27 @@ app.get('/api/projects/:_id', function(req, res) {
     })
 });
 
+//PUT api/films/id: update film by id
+app.put('/api/projects/:_id', function(req, res) {
+    return projectModel.findById(req.params._id, function (err, project) {
+        project.name = res.body.name;
+        project.work = res.body.work;
+        project.year = res.body.year;
+        project.img = res.body.img;
+
+        return project.save(function (err) {
+            if (!err) {
+                return console.log('project geüpdatet');
+            }
+            else {
+                return console.log(err);
+            }
+
+
+        });
+
+    });
+});
 
 
 // EIND DB STUFF

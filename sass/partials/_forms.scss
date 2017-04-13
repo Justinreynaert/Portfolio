@@ -1,0 +1,56 @@
+form {
+  padding: 0.625em;
+  background-color: white;
+
+
+
+  input[type=text],
+  input[type=email],
+  textarea, label, button {
+    font-size: 1em;
+    color: $grey;
+    width: 100%;
+  }
+
+  label {
+    display:block;
+    margin: 0.625em 0;
+    color: $black;
+
+
+  }
+
+  input[type=text],
+  input[type=email],
+  textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed $grey;
+    outline: none;
+    padding: 0;
+    font-style: italic;
+
+    &:focus {
+      border-bottom: 1px dashed $rood;
+    }
+  }
+
+  textarea{
+    overflow: hidden;
+    resize: vertical;
+  }
+
+
+  button {
+    margin-top: 0.625em;
+    background: $grey;
+    border: none;
+    padding: 0.625em;
+    color: $rood;
+
+    &:hover {
+      color: $grey;
+      background: $rood;
+    }
+  }
+}
