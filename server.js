@@ -16,7 +16,7 @@ var mongoose = require('mongoose');
 var port = process.env.PORT || 8080;
 
 // DB stuffs -- Connecting to the db
-mongoose.connect('mongodb://localhost/meanstackdb');
+mongoose.connect('mongodb://Dangery:test123@ds157980.mlab.com:57980/portfolio');
 
 //Projects Schema
 var Project = new mongoose.Schema({
