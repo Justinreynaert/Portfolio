@@ -14,15 +14,15 @@
                     <p class="work">{{project.year}}</p>
                     <a ng-href="projects/{{project._id}}" ng-click="$event.stopPropagation();">View Project!</a>
                     <a ng-href="project/edit/{{project._id}}" ng-click="$event.stopPropagation();">Edit Project!</a>
-
-                    <!--
-                    <img src="../images/{{project.img}}.jpg">
+                    <a href ng-click="$event.stopPropagation();deleteProject(project._id);">remove</a>
+                    <!--<img src="../images/{{project.img}}.jpg">
                     -->
 
 
                 </div>
             </li>
         </ul>
+        <a ng-href="project/new">Hey, I've got a new project!</a>
     </section>
 
 

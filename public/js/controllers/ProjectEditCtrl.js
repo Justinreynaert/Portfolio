@@ -7,12 +7,17 @@ angular.module('ProjectEditCtrl', [])
             $scope.save = function(project) {
                 if($scope.project._id) {
                     //update
-                    projectService.update({_id:$scope.project._id})
+                    projectService.update({_id:$scope.project._id}, $scope.project)
+
                 } else {
                     //nieuwe
-                    $scope.project.$save()
+                    $scope.project.$save();
+
                 }
+
                 $window.location.assign('/');
 
-            }
+            };
+
+
         }]);

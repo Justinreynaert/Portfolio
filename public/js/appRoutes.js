@@ -18,6 +18,11 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             controller: 'ProjectController'
         })
 
+        .when('/project/new', {
+            templateUrl: '/views/projectEditDetail.html',
+            controller: 'ProjectEditController'
+        })
+
         .when('/projects/:_id', {
             templateUrl: '/views/projectDetail.html',
             controller: 'ProjectDetailController'
@@ -27,6 +32,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             templateUrl: '/views/projectEditDetail.html',
             controller: 'ProjectEditController'
         })
+
 
         .when('/contact', {
             templateUrl: '/views/contact.html',

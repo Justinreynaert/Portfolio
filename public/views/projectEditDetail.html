@@ -1,9 +1,17 @@
-<div id="project" data-ng-model="project">
-    <form data-ng-submit="save(project)" data-ng-model="project">
-        <div ng-repeat="(key, val) in project">
-            <label for="{{key}}">{{key}}</label>
-            <input type="text" ng-model="project.year">
-        </div>
+<div id="project">
+    <form data-ng-model="project" data-ng-submit="save(project)" >
+        <label for="name">name</label>
+        <input type="text" name="name" data-ng-model="project.name" >
+        <label for="work">work</label>
+        <input type="text" name="work" data-ng-model="project.work">
+        <label for="year">year</label>
+        <input type="text" name="year" data-ng-model="project.year">
+        <label for="img">img</label>
+        <input type="text" name="img" data-ng-model="project.img">
+
         <button type="submit" value="save">Save</button>
+
     </form>
+
+
 </div>
