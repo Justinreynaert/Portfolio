@@ -1,9 +1,13 @@
+module.exports = function(mongoose) {
+
 //Projects Schema
 var Projects = new mongoose.Schema({
     name: String,
     work: String,
-    year: String
-});
+    year: String,
+    img: String}, {versionKey: false}
+);
 
-//Projects Model
-var projectsModel = mongoose.model('Projects', Projects); // collection films pluralization
+return projectModel = mongoose.model('Projects', Projects);
+
+};

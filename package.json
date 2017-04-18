@@ -3,17 +3,13 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.17.1",
+    "crypto": "*",
     "express": "^4.15.2",
-
-    "express-session":"*",
-
+    "express-session": "*",
+    "jsonwebtoken": "^7.3.0",
     "method-override": "^2.3.8",
     "mongoose": "^4.9.3",
-
-    "passport": "*",
-    "passport-local": "*",
-    "connect-flash": "*",
-    "bcrypt-nodejs": "*"
-
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
   }
 }
